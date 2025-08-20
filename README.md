@@ -1,5 +1,13 @@
 # RAG Application
 
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Qdrant](https://img.shields.io/badge/VectorDB-Qdrant-orange?logo=qdrant)](https://qdrant.tech/)
+[![LangChain](https://img.shields.io/badge/LangChain-RAG-green)](https://www.langchain.com/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-412991?logo=openai)](https://platform.openai.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A comprehensive Retrieval Augmented Generation (RAG) application built with Next.js, featuring document processing, website scraping, and AI-powered chat functionality.
 
 ## Features
