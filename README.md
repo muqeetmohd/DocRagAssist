@@ -23,7 +23,7 @@ A comprehensive Retrieval Augmented Generation (RAG) application built with Next
 
 ## Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - OpenAI API key
 - **Choose one of the following for vector database:**
   - Docker (for local Qdrant instance)
@@ -32,53 +32,61 @@ A comprehensive Retrieval Augmented Generation (RAG) application built with Next
 ## Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd rag-application
-   ```
+
+```bash
+git clone https://github.com/BCAPATHSHALA/RAGApplication.git
+cd RAGApplication
+```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+
+```bash
+pnpm install
+```
 
 3. **Choose your vector database setup:**
 
 ### Option A: Local Docker Setup (Recommended for Development)
 
 3a. **Start Qdrant vector database**
-   ```bash
-   docker-compose up -d
-   ```
-   This will start Qdrant on `http://localhost:6333`
+
+```bash
+docker-compose up -d
+```
+
+This will start Qdrant on `http://localhost:6333`
 
 3b. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
-   ```env
-   QDRANT_URL=http://localhost:6333
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
+Create a `.env.local` file in the root directory:
+
+```env
+QDRANT_URL=http://localhost:6333
+OPENAI_API_KEY=your_openai_api_key_here
+```
 
 ### Option B: Qdrant Cloud Setup (Recommended for Production)
 
 3a. **Create a Qdrant Cloud account**
-   - Visit [https://cloud.qdrant.io/](https://cloud.qdrant.io/)
-   - Sign up for a free account
-   - Create a new cluster
-   - Get your cluster URL and API key
+
+- Visit [https://cloud.qdrant.io/](https://cloud.qdrant.io/)
+- Sign up for a free account
+- Create a new cluster
+- Get your cluster URL and API key
 
 3b. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
-   ```env
-   QDRANT_URL=https://your-cluster-url.qdrant.io
-   QDRANT_API_KEY=your_qdrant_api_key
-   OPENAI_API_KEY=your_openai_api_key_here
-   ```
+Create a `.env.local` file in the root directory:
+
+```env
+QDRANT_URL=https://your-cluster-url.qdrant.io
+QDRANT_API_KEY=your_qdrant_api_key
+OPENAI_API_KEY=your_openai_api_key_here
+```
 
 4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+
+```bash
+pnpm run dev
+```
 
 5. **Open your browser**
    Navigate to `http://localhost:3000`
@@ -86,15 +94,18 @@ A comprehensive Retrieval Augmented Generation (RAG) application built with Next
 ## Configuration
 
 ### In-App Configuration
+
 The application provides an intuitive interface for configuration:
 
 1. **OpenAI API Key**: Enter your OpenAI API key in the API Key section
-2. **Qdrant Configuration**: 
+2. **Qdrant Configuration**:
    - For local Docker: Use `http://localhost:6333` (no API key needed)
    - For Qdrant Cloud: Enter your cluster URL and API key from the dashboard
 
 ### Environment Variables (Alternative)
+
 You can also configure via environment variables:
+
 - `QDRANT_URL`: Qdrant database connection URL
 - `QDRANT_API_KEY`: Qdrant API key (required for cloud, optional for local)
 - `OPENAI_API_KEY`: OpenAI API key for embeddings and chat
@@ -102,31 +113,37 @@ You can also configure via environment variables:
 ## Usage
 
 ### 1. Configure Services
+
 - **OpenAI API Key**: Enter your API key (must start with 'sk-')
 - **Qdrant Setup**: Configure either local Docker or Qdrant Cloud connection
 
 ### 2. Add Data Sources
 
 **Text Input**:
+
 - Paste text directly into the textarea
 - Minimum 10 characters required
 - Text will be chunked and indexed automatically
 
 **Website Scraping**:
+
 - Enter a valid URL (must include http:// or https://)
 - The system will scrape and index the website content
 
 **File Upload**:
+
 - Upload PDF, CSV, or TXT files (max 10MB)
 - Files are processed and chunked automatically
 - Progress feedback provided during processing
 
 ### 3. Monitor RAG Store
+
 - View real-time statistics of indexed documents
 - See total documents and chunks
 - Review recent data sources
 
 ### 4. Chat with Your Data
+
 - Use the chat interface to ask questions about your indexed data
 - The AI will provide responses based on the most relevant document chunks
 - Conversation history is maintained during the session
@@ -139,18 +156,21 @@ You can also configure via environment variables:
 - `POST /api/index-file` - Process and index uploaded files
 - `POST /api/chat` - Chat with indexed data
 - `GET /api/rag-store` - Get indexed document statistics
+- `DELETE /api/delete-index` - Delete all indexed data
 
 ## Architecture
 
 ### Vector Database Options
 
 #### Local Docker (Development)
+
 - **Qdrant**: High-performance vector database running in Docker
 - **Port**: 6333 (default)
 - **Storage**: Persistent volume for data retention
 - **Configuration**: No API key required
 
 #### Qdrant Cloud (Production)
+
 - **Managed Service**: Fully managed Qdrant instance
 - **Scalability**: Auto-scaling based on usage
 - **Security**: Built-in authentication and encryption
@@ -158,12 +178,14 @@ You can also configure via environment variables:
 - **Configuration**: Requires cluster URL and API key
 
 ### Document Processing
+
 - **Text Chunking**: Recursive character text splitter (1000 chars, 200 overlap)
 - **PDF Processing**: LangChain PDF loader for text extraction
 - **CSV Processing**: Structured data handling with metadata
 - **Web Scraping**: Cheerio for clean HTML content extraction
 
 ### AI Integration
+
 - **OpenAI GPT-4**: For generating contextual responses
 - **LangChain**: Document processing and RAG pipeline orchestration
 - **Embeddings**: text-embedding-3-large for high-quality vector representations
@@ -171,26 +193,32 @@ You can also configure via environment variables:
 ## Deployment
 
 ### Local Development
+
 ```bash
 npm run dev
 ```
 
 ### Docker Deployment (with local Qdrant)
+
 1. Build the application:
-   ```bash
-   npm run build
-   ```
+
+```bash
+pnpm run build
+```
 
 2. Start with Docker Compose:
-   ```bash
-   docker-compose up -d
-   ```
+
+```bash
+docker-compose up -d
+```
 
 ### Vercel Deployment (with Qdrant Cloud)
+
 1. Deploy to Vercel:
-   ```bash
-   vercel deploy
-   ```
+
+```bash
+vercel deploy
+```
 
 2. Set environment variables in Vercel dashboard:
    - `QDRANT_URL` (your Qdrant Cloud cluster URL)
@@ -200,12 +228,14 @@ npm run dev
 ### Production Considerations
 
 **For Qdrant Cloud:**
+
 - Use environment variables for sensitive configuration
 - Enable API key authentication
 - Monitor usage and costs in Qdrant Cloud dashboard
 - Consider data residency requirements
 
 **For Local Docker:**
+
 - Ensure persistent storage for production data
 - Configure proper backup strategies
 - Monitor resource usage and scaling needs
@@ -216,21 +246,25 @@ npm run dev
 ### Common Issues
 
 **"Collection not found" errors:**
+
 - The collection is created automatically when you first index data
 - Ensure Qdrant is running and accessible
 - Check your Qdrant URL and API key configuration
 
 **File upload failures:**
+
 - Check file size limits (10MB max)
 - Ensure supported file formats (PDF, CSV, TXT)
 - Verify OpenAI API key is valid
 
 **Chat not working:**
+
 - Ensure you have indexed some data first
 - Check OpenAI API key configuration
 - Verify Qdrant connection is working
 
 ### Performance Tips
+
 - Use Qdrant Cloud for better performance and reliability
 - Index documents in smaller batches for large datasets
 - Monitor OpenAI API usage and costs
@@ -251,6 +285,7 @@ MIT License - see LICENSE file for details
 ## Support
 
 For issues and questions:
+
 - Create an issue on GitHub
 - Check the troubleshooting section
 - Review the API documentation
@@ -258,6 +293,5 @@ For issues and questions:
 
 ## Social Links
 
-- [GitHub](https://github.com)
-- [LinkedIn](https://linkedin.com)
-- [Twitter](https://twitter.com)
+- [LinkedIn](https://linkedin.com/in/manojofficialmj)
+- [Twitter](https://twitter.com/manojofficialmj)
