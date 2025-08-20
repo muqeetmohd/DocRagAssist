@@ -1,4 +1,4 @@
-# RAG Application
+# 🤖 Free Forever RAG Application – Chat with Your Data
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://reactjs.org/)
@@ -11,6 +11,16 @@
 A comprehensive Retrieval Augmented Generation (RAG) application built with Next.js, featuring document processing, website scraping, and AI-powered chat functionality.
 
 #### 🎥 **YouTube Video:** [Click here](https://www.youtube.com/watch?v=2CrcchGCpcw)
+
+## 🔐 Security & Privacy
+
+⚡ **Important Note:**
+
+- Your **OpenAI API key** and **Qdrant credentials** are **never stored on our servers**.
+- They are stored securely **only on your localhost (or in your environment variables like .env.local)**.
+- This means your credentials always remain under your control and are not shared with any third-party servers.
+
+👉 So, you can safely use your API key without any worries everything stays on your localhost.
 
 ## Features
 
