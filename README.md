@@ -205,7 +205,7 @@ You can also configure via environment variables:
 ### Local Development
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ### Docker Deployment (with local Qdrant)
