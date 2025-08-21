@@ -10,6 +10,8 @@
 
 A comprehensive Retrieval Augmented Generation (RAG) application built with Next.js, featuring document processing, website scraping, and AI-powered chat functionality.
 
+![RAG-APP](./rag.png)
+
 #### 🎥 **YouTube Video:** [Click here](https://www.youtube.com/watch?v=2CrcchGCpcw)
 
 ## 🔐 Security & Privacy
