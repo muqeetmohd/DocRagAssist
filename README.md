@@ -237,7 +237,7 @@ docker-compose up -d
 
 ### Vercel Deployment (with Qdrant Cloud)
 
-1. Deploy to Vercel:
+1. Deploy to Vercel (ideal for start):
 
 ```bash
 vercel deploy
@@ -264,28 +264,6 @@ vercel deploy
 - Monitor resource usage and scaling needs
 - Secure network access to Qdrant instance
 
-## Troubleshooting
-
-### Common Issues
-
-**"Collection not found" errors:**
-
-- The collection is created automatically when you first index data
-- Ensure Qdrant is running and accessible
-- Check your Qdrant URL and API key configuration
-
-**File upload failures:**
-
-- Check file size limits (10MB max)
-- Ensure supported file formats (PDF, CSV, TXT)
-- Verify OpenAI API key is valid
-
-**Chat not working:**
-
-- Ensure you have indexed some data first
-- Check OpenAI API key configuration
-- Verify Qdrant connection is working
-
 ### Performance Tips
 
 - Use Qdrant Cloud for better performance and reliability
@@ -293,28 +271,7 @@ vercel deploy
 - Monitor OpenAI API usage and costs
 - Consider chunking strategies for different document types
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
 
 ## License
 
 MIT License - see LICENSE file for details
-
-## Support
-
-For issues and questions:
-
-- Create an issue on GitHub
-- Check the troubleshooting section
-- Review the API documentation
-- Visit [Qdrant Cloud Documentation](https://qdrant.tech/documentation/)
-
-## Social Links
-
-- [LinkedIn](https://linkedin.com/in/manojofficialmj)
-- [Twitter](https://twitter.com/manojofficialmj)
