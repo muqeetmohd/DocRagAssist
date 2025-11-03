@@ -14,12 +14,11 @@ A comprehensive Retrieval Augmented Generation (RAG) application built with Next
 
 ![RAG-APP](./rag.png)
 
-#### 🎥 **YouTube Video:** [Click here](https://www.youtube.com/watch?v=2CrcchGCpcw)
 
 ## 🔐 Security & Privacy
 
 ⚡ **Important Note:**
-
+Please make sure
 - Your **OpenAI API key** and **Qdrant credentials** are **never stored on our servers**.
 - They are stored securely **only on your localhost (or in your environment variables like .env.local)**.
 - This means your credentials always remain under your control and are not shared with any third-party servers.
