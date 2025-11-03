@@ -1,5 +1,7 @@
-# 🤖 Free Forever RAG Application – Chat with Your Data
+# RAG Application – Chat with Your Data
 
+
+Techstack:
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org/)
