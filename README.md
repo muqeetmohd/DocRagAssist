@@ -1,4 +1,4 @@
-# RAG Application – Chat with Your Data
+# RAG Application – Chat with Your Data (implmentation)
 
 
 Techstack:
